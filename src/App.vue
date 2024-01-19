@@ -55,18 +55,16 @@
         </td>
       </tr>
     </table>
-    store.state.details
-    <div>
+
+    <div :class="{ comp: true }">
       <Form v-if="showAddComponent" @close="showAddComponent = false" />
-    </div>
-    <div>
+
       <EditForm
         v-if="showEditComponent"
         @close="showEditComponent = false"
         :idx="idx"
       />
-    </div>
-    <div>
+
       <Delete
         v-if="showDeleteComponent"
         @close="showDeleteComponent = false"
@@ -123,5 +121,10 @@ table {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+.comp {
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
