@@ -55,6 +55,7 @@
         </td>
       </tr>
     </table>
+    store.state.details
     <div>
       <Form v-if="showAddComponent" @close="showAddComponent = false" />
     </div>
@@ -90,7 +91,7 @@ const idx = ref(0);
 const searchItem = ref("");
 
 const filteredItems = computed(() => {
-  return store.state.details.filter((item) => {
+  return store.state.details.filter((item: any) => {
     return item.name.toLowerCase().includes(searchItem.value.toLowerCase());
   });
 });
